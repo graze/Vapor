@@ -58,14 +58,18 @@ pre {
   font-family: "Consolas", Courier, monospace;
   font-size: 1em;
   line-height: 1.2em;
-  padding: 1em;
+  padding: 1em 0;
   white-space: pre;
-  white-space: pre-wrap;
-  white-space: -moz-pre-wrap;
-  white-space: -pre-wrap;
-  white-space: -o-pre-wrap;
-  word-wrap: break-word;
+  white-space: -moz-pre;
+  white-space: -pre;
+  white-space: -o-pre;
   background-color: rgba(0, 0, 0, 0.05);
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+pre code {
+  padding: 0 1em;
+  display: block;
 }
 p code {
   font-family: "Consolas", Courier, monospace;
@@ -117,6 +121,9 @@ article.preview p.readmore {
   background-size: cover !important;
   background-position: center center !important;
   background-color: #ffffff;
+}
+.blog-links {
+  padding-left: 10px;
 }
 h1.blog-title,
 h2.blog-description {
@@ -181,6 +188,7 @@ section.author p.bio {
   font-size: 16px;
   margin-left: 82px;
   line-height: 1.4em;
+  margin-bottom: 8px;
 }
 blockquote {
   font-family: "Open Sans Condensed", "Open Sans", "Helvetica Neue", Helvetica, Arial, "Nimbus L", sans-serif;
@@ -215,12 +223,12 @@ blockquote p {
   margin-bottom: 0.6em;
 }
 div.authorimage {
-  width: 70px;
-  height: 70px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
   background-size: cover !important;
   background-position: center center !important;
-  margin-right: 10px;
+  margin-right: 15px;
   float: left;
 }
 h1.post-title a,
@@ -260,6 +268,19 @@ img.userimage {
   border-radius: 50%;
   margin-right: 10px;
   float: left;
+}
+a.hiring-badge {
+  background-color: #c60;
+  padding: 0 6px;
+  color: #fff;
+  font-size: 13px;
+  line-height: 19px;
+  border-radius: 2px;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  top: -2px;
+  text-transform: uppercase;
 }
 /* === Footer === */
 footer {
