@@ -54,6 +54,22 @@ dt {
 li {
   padding-left: 0.8em;
 }
+
+a.hiring-badge {
+    background-color:#c60;
+    padding: 0 6px;
+    color: #fff;
+    font-size: 13px;
+    line-height: 19px;
+    border-radius: 2px;
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    top: -2px;
+    text-transform: uppercase;
+}
+
+
 pre {
   font-family: "Consolas", Courier, monospace;
   font-size: 1em;
@@ -268,19 +284,6 @@ img.userimage {
   border-radius: 50%;
   margin-right: 10px;
   float: left;
-}
-a.hiring-badge {
-  background-color: #c60;
-  padding: 0 6px;
-  color: #fff;
-  font-size: 13px;
-  line-height: 19px;
-  border-radius: 2px;
-  display: inline-block;
-  vertical-align: middle;
-  position: relative;
-  top: -2px;
-  text-transform: uppercase;
 }
 /* === Footer === */
 footer {

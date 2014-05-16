@@ -76,19 +76,14 @@ pre {
     font-family: @preFontFamily;
     font-size: 1em;
     line-height: 1.2em;
-    padding: 1em 0;
+    padding: 1em;
     white-space: pre;
-    white-space: -moz-pre;
-    white-space: -pre;
-    white-space: -o-pre;
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    word-wrap: break-word;
     background-color: @subtleColor;
-    overflow-x: auto;
-    overflow-y: hidden;
-}
-
-pre code {
-    padding: 0 1em;
-    display: block;
 }
 
 p code {
@@ -142,10 +137,6 @@ article.preview {
       background-position: center center !important;
       background-color: @bodyBackgroundColor;
     }
-}
-
-.blog-links {
-  padding-left: 10px;
 }
 
 h1.blog-title, h2.blog-description {
@@ -305,20 +296,6 @@ img.userimage {
     border-radius: 50%;
     margin-right: 10px;
     float: left;
-}
-
-a.hiring-badge {
-    background-color:#c60;
-    padding: 0 6px;
-    color: #fff;
-    font-size: 13px;
-    line-height: 19px;
-    border-radius: 2px;
-    display: inline-block;
-    vertical-align: middle;
-    position: relative;
-    top: -2px;
-    text-transform: uppercase;
 }
 
 /* === Footer === */
