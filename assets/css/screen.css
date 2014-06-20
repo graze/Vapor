@@ -1,5 +1,4 @@
 @import url(//fonts.googleapis.com/css?subset=latin,cyrillic-ext,latin-ext,cyrillic&family=Open+Sans+Condensed:300|Merriweather:400,300,300italic,400italic,700,700italic|Roboto+Slab:400,300);
-
 @import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
 /* === Core Styles === */
 body {
@@ -36,6 +35,20 @@ a:visited {
   transition: color ease 0.7s;
   -webkit-transition: color ease 0.7s;
 }
+a .hiring-badge,
+a:visited .hiring-badge {
+  background-color: #c60;
+  padding: 0 6px;
+  color: #fff;
+  font-size: 13px;
+  line-height: 19px;
+  border-radius: 2px;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  top: -2px;
+  text-transform: uppercase;
+}
 a:focus,
 a:hover {
   color: #02090e;
@@ -54,31 +67,17 @@ dt {
 li {
   padding-left: 0.8em;
 }
-
-a.hiring-badge {
-    background-color:#c60;
-    padding: 0 6px;
-    color: #fff;
-    font-size: 13px;
-    line-height: 19px;
-    border-radius: 2px;
-    display: inline-block;
-    vertical-align: middle;
-    position: relative;
-    top: -2px;
-    text-transform: uppercase;
-}
-
-
 pre {
   font-family: "Consolas", Courier, monospace;
   font-size: 1em;
   line-height: 1.2em;
   padding: 1em 0;
   white-space: pre;
-  white-space: -moz-pre;
-  white-space: -pre;
-  white-space: -o-pre;
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
   background-color: rgba(0, 0, 0, 0.05);
   overflow-x: auto;
   overflow-y: hidden;
@@ -285,6 +284,30 @@ img.userimage {
   margin-right: 10px;
   float: left;
 }
+section .js-video {
+  height: 0;
+  padding-top: 25px;
+  padding-bottom: 67.5%;
+  margin-bottom: 10px;
+  position: relative;
+  overflow: hidden;
+}
+section .js-video.widescreen {
+  padding-bottom: 57.25%;
+}
+section .js-video.vimeo {
+  padding-top: 0px;
+}
+section .js-video iframe,
+section .js-video embed,
+section .js-video object,
+section .js-video video {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
 /* === Footer === */
 footer {
   background: rgba(0, 0, 0, 0.05);
@@ -414,7 +437,6 @@ a.archive-link {
   text-transform: uppercase !important;
   display: none !important;
   /* Hide GitHub attribution */
-
 }
 .gist .gist-file .gist-meta a:visited {
   color: #3498db !important;
@@ -423,7 +445,6 @@ a.archive-link {
   background: #fdfdfd !important;
   border-bottom: none !important;
   /* Hide GitHub attribution */
-
 }
 .gist .gist-file .gist-data .line-numbers {
   border-right: none !important;
@@ -435,6 +456,9 @@ a.archive-link {
 .gist .gist-file .gist-data .line-numbers,
 .gist .gist-file .gist-data .line-pre {
   line-height: 1.2em !important;
+}
+#disqus_thread {
+  color: #000;
 }
 .hidden {
   text-indent: -9999px;
@@ -488,9 +512,6 @@ a.archive-link {
   font-size: 12px;
   position: relative;
   top: -1px;
-}
-#disqus_thread {
-    color: #000;
 }
 /* === Media Queries === */
 @media only screen and (min-width: 320px) and (max-width: 500px) {
