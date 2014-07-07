@@ -1,6 +1,5 @@
-@import url(//fonts.googleapis.com/css?subset=latin,cyrillic-ext,latin-ext,cyrillic&family=Open+Sans+Condensed:300|Merriweather:400,300,300italic,400italic,700,700italic|Roboto+Slab:400,300);
-
-@import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
+@import url('//fonts.googleapis.com/css?subset=latin,cyrillic-ext,latin-ext,cyrillic&family=Open+Sans+Condensed:300|Open+Sans:400,600,400italic,600italic|Merriweather:400,300,300italic,400italic,700,700italic|Roboto+Slab:400,300');
+@import url('//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css');
 /* === Core Styles === */
 body {
   background-color: #ffffff;
@@ -36,6 +35,20 @@ a:visited {
   transition: color ease 0.7s;
   -webkit-transition: color ease 0.7s;
 }
+a.hiring-badge,
+a:visited.hiring-badge {
+  background-color: #c60;
+  padding: 0 6px;
+  color: #fff;
+  font-size: 13px;
+  line-height: 19px;
+  border-radius: 2px;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  top: -2px;
+  text-transform: uppercase;
+}
 a:focus,
 a:hover {
   color: #02090e;
@@ -54,38 +67,18 @@ dt {
 li {
   padding-left: 0.8em;
 }
-
-a.hiring-badge {
-    background-color:#c60;
-    padding: 0 6px;
-    color: #fff;
-    font-size: 13px;
-    line-height: 19px;
-    border-radius: 2px;
-    display: inline-block;
-    vertical-align: middle;
-    position: relative;
-    top: -2px;
-    text-transform: uppercase;
-}
-
-
 pre {
   font-family: "Consolas", Courier, monospace;
   font-size: 1em;
   line-height: 1.2em;
-  padding: 1em 0;
+  padding: 1em;
   white-space: pre;
-  white-space: -moz-pre;
-  white-space: -pre;
-  white-space: -o-pre;
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
   background-color: rgba(0, 0, 0, 0.05);
-  overflow-x: auto;
-  overflow-y: hidden;
-}
-pre code {
-  padding: 0 1em;
-  display: block;
 }
 p code {
   font-family: "Consolas", Courier, monospace;
@@ -103,7 +96,6 @@ h1 {
 }
 #site-head,
 article,
-nav,
 article.preview,
 a.archive-link,
 .article-nav {
@@ -138,9 +130,6 @@ article.preview p.readmore {
   background-position: center center !important;
   background-color: #ffffff;
 }
-.blog-links {
-  padding-left: 10px;
-}
 h1.blog-title,
 h2.blog-description {
   text-align: center;
@@ -155,9 +144,15 @@ h1.blog-title {
 h2.blog-description {
   border-bottom: 1px solid #ecf0f1;
   border-top: 1px solid #ecf0f1;
-  margin-bottom: 3em;
+  margin-bottom: 2em;
   padding: .5em 1em;
   line-height: 1.2em;
+}
+h2.blog-description span.blog-links {
+  padding-left: 10px;
+}
+section.footer-description {
+  margin-bottom: 1em;
 }
 header.article-header,
 header.page-header {
@@ -193,6 +188,10 @@ section.share p.info {
   line-height: 20px;
   text-transform: uppercase;
   font-family: "Open Sans Condensed", "Open Sans", "Helvetica Neue", Helvetica, Arial, "Nimbus L", sans-serif;
+}
+section.share p.info.prompt {
+  top: -5px;
+  position: relative;
 }
 section.author p.attr {
   margin-bottom: 2px;
@@ -266,6 +265,12 @@ h2 {
   text-transform: uppercase;
   font-weight: 300;
 }
+section.post-content hr {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 0;
+  border-top: 1px solid #eee;
+}
 section.post-content img {
   display: block;
   margin: 0 auto;
@@ -301,17 +306,19 @@ footer section {
   text-transform: uppercase;
   width: 90%;
 }
-footer.post-footer {
+.post-footer {
   background: none;
   border-top: 1px solid #ecf0f1;
-  margin-top: 1em;
+  margin-top: 0.75em;
 }
 /* === Navigation and Pagination === */
 nav {
   border-bottom: 1px solid #ecf0f1;
   border-top: 1px solid #ecf0f1;
-  margin-bottom: 3em;
+  margin-bottom: 2em;
   text-align: center;
+  margin: 20px auto 2em auto;
+  max-width: 600px;
 }
 nav ul {
   list-style: none;
@@ -321,27 +328,41 @@ nav ul {
   overflow: hidden;
   text-align: center;
 }
-nav li {
+nav ul li {
   display: inline-block;
   font-family: "Open Sans Condensed", "Open Sans", "Helvetica Neue", Helvetica, Arial, "Nimbus L", sans-serif;
   font-size: 18px;
   font-weight: 300;
-  margin: 0 2em;
-  padding: 0;
+  margin: 0;
+  padding: 0 .5em;
   text-align: center;
   text-transform: uppercase;
-  width: 4em;
 }
-nav li a {
+nav ul li a {
   display: block;
   padding: .5em 0;
 }
-nav li:first-child {
+nav.menu {
+  margin-bottom: 2.5em;
+}
+nav.menu li {
+  margin: 0 .5em;
+  padding: 0;
+}
+nav.menu li:last-child {
+  margin: 0;
+}
+@media only screen and (min-width: 320px) and (max-width: 662px) {
+  nav.menu li {
+    display: block;
+  }
+}
+nav.pagination li:first-child {
   margin-left: 0;
   margin-right: 0;
   text-align: right;
 }
-nav li:last-child {
+nav.pagination li:last-child {
   margin-left: 0;
   margin-right: 0;
   text-align: left;
@@ -414,7 +435,6 @@ a.archive-link {
   text-transform: uppercase !important;
   display: none !important;
   /* Hide GitHub attribution */
-
 }
 .gist .gist-file .gist-meta a:visited {
   color: #3498db !important;
@@ -423,18 +443,17 @@ a.archive-link {
   background: #fdfdfd !important;
   border-bottom: none !important;
   /* Hide GitHub attribution */
-
 }
 .gist .gist-file .gist-data .line-numbers {
   border-right: none !important;
 }
 .gist .gist-file .gist-data .line-numbers,
-.gist .gist-file .gist-meta {
-  background-color: rgba(0, 0, 0, 0.05) !important;
-}
-.gist .gist-file .gist-data .line-numbers,
 .gist .gist-file .gist-data .line-pre {
   line-height: 1.2em !important;
+}
+.gist .gist-file .gist-data .line-numbers,
+.gist .gist-file .gist-meta {
+  background-color: rgba(0, 0, 0, 0.05) !important;
 }
 .hidden {
   text-indent: -9999px;
@@ -489,8 +508,31 @@ a.archive-link {
   position: relative;
   top: -1px;
 }
+/* Comments */
 #disqus_thread {
-    color: #000;
+  color: #787878;
+}
+/* Tables */
+table {
+  width: 100%;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, "Nimbus L", sans-serif;
+  border-collapse: collapse;
+  margin: 1em 0 3em;
+}
+table td {
+  padding: .5em;
+}
+table thead {
+  font-weight: 600;
+  border-bottom: 1px solid #ecf0f1;
+}
+table tbody tr:nth-child(even) {
+  background-color: #ecf0f1;
+  border-top: 1px solid #e3e9eb;
+  border-bottom: 1px solid #e3e9eb;
+}
+table tfoot {
+  border-top: 1px solid #ecf0f1;
 }
 /* === Media Queries === */
 @media only screen and (min-width: 320px) and (max-width: 500px) {

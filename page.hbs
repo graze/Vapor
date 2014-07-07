@@ -36,12 +36,10 @@
 
             {{#if author}}
             <section class="author">
-                <a href="http://www.graze.com">
-                    <div class="authorimage" style="background: url({{author.image}})"></div>
-                </a>
-
-                <p class="bio">Find us on <a href="https://github.com/graze">GitHub</a> or follow us on <a href="https://twitter.com/snack_overflow">Twitter</a>.</p>
-                <p class="bio"><strong>We're hiring!</strong> Here at <a href="http://www.graze.com">graze</a>, we're always looking to hire smart people to join our tech team. If you love solving the types of technical challenges we face, why not apply for one of our roles.</p>
+                <div class="authorimage" style="background: url({{author.image}})"></div>
+                <p class="attr">Author</p>
+                <h4><a href="{{author.website}}">{{author.name}}</a></h4>
+                <p class="bio">{{author.bio}}</p>
             </section>
             {{/if}}
 
@@ -49,7 +47,7 @@
 
         {{/post}}
 
-        {{> comments-disqus}}
+        {{!> comments-disqus}}
 
     </article>
 
