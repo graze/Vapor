@@ -97,6 +97,7 @@ h1 {
   line-height: 42px;
   margin: 0;
   padding: 0;
+  text-transform: uppercase;
 }
 #site-head,
 article,
