@@ -22,7 +22,7 @@
         <header>
         {{#if tags}}<div class="post-meta tags">Posted in {{tags}}</div>{{/if}}
         <h1 class="post-title">{{{title}}}</h1>
-        <div class="post-meta">{{author.name}} | <time datetime="{{date format='YYYY-MM-DD'}}">{{date format="dddd, MMMM DD, YYYY"}}</time></div>
+        <div class="post-meta"><a href="{{author.url}}">{{author.name}}</a> | <time datetime="{{date format='YYYY-MM-DD'}}">{{date format="dddd, MMMM DD, YYYY"}}</time></div>
         </header>
 
         <section class="post-content">
@@ -49,7 +49,7 @@
 
             {{#if author}}
             <section class="author">
-                <a href="http://www.graze.com">
+                <a href="{{author.url}}">
                     <div class="authorimage" style="background: url({{author.image}})"></div>
                 </a>
 
